@@ -138,5 +138,5 @@ skip_forward_button.pack(side='left', padx=10, anchor='center')
 URL_button = customtkinter.CTkButton(controls_frame, text="URL", command=open_new_window, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent')
 URL_button.pack(side='left', padx=10, anchor='center')
 
-# Hauptloop starten
+# Hauptloop startenw
 root.mainloop()
