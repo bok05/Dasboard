@@ -15,10 +15,22 @@ from PIL import Image
 zielordner = ''
 dateiname = 'test'
 titel = ''
+#icons
 play_dark = Image.open('imges/dark_play_icon.png')
 play_light = Image.open('imges/light_play_icon.png')
 dark_stop = Image.open('imges/dark_stop_icon.png')
 light_stop = Image.open('imges/light_stop_icon.png')
+pause_dark = Image.open('imges/dark_pause_icon.png')
+pause_light = Image.open('imges/light_pause_icon.png')
+back_light = Image.open('imges/light_arrow_back_left_icon.png')
+back_dark = Image.open('imges/dark_arrow_back_left_icon.png')
+next_dark = Image.open('imges/dark_arrow_next_right_icon.png')
+next_light = Image.open('imges/light_arrow_next_right_icon.png')
+URl_light = Image.open('imges/light_link_connect_url_chain_icon.png')
+URl_dark = Image.open('imges/dark_link_connect_url_chain_icon.png')
+
+
+
 def open_new_window():
     # Verstecke das Hauptfenster
     root.withdraw()
@@ -123,19 +135,19 @@ print(titel)
 stop_button = customtkinter.CTkButton(master=controls_frame, text="", command=player.stop, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', border_color="#c20000", border_width=2, image=CTkImage(light_image=light_stop,dark_image=dark_stop))
 stop_button.pack(side='left', padx=(root.winfo_screenwidth()//25, 10), anchor='center')
 
-play_button = customtkinter.CTkButton(controls_frame, text="", command=player.play, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', image=CTkImage(dark_image=play_dark,light_image=play_light))
+play_button = customtkinter.CTkButton(controls_frame, text="", command=player.play, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', image=CTkImage(dark_image=play_dark,light_image=play_light), border_color="#c20000", border_width=2,)
 play_button.pack(side='left', padx=10, anchor='center')
 
-pause_button = customtkinter.CTkButton(controls_frame, text="Pause", command=player.pause, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent')
+pause_button = customtkinter.CTkButton(controls_frame, text="", command=player.pause, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', image=CTkImage(dark_image=pause_dark,light_image=pause_light), border_color="#c20000", border_width=2,)
 pause_button.pack(side='left', padx=10, anchor='center')
 
-skip_back_button = customtkinter.CTkButton(controls_frame, text="Zurück", command=lambda: skip(-1000), font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent')
+skip_back_button = customtkinter.CTkButton(controls_frame, text="", command=lambda: skip(-1000), font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', image=CTkImage(dark_image=back_dark,light_image=back_light), border_color="#c20000", border_width=2,)
 skip_back_button.pack(side='left', padx=10, anchor='center')
 
-skip_forward_button = customtkinter.CTkButton(controls_frame, text="Vor", command=lambda: skip(1000), font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent')
+skip_forward_button = customtkinter.CTkButton(controls_frame, text="", command=lambda: skip(1000), font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', border_color="#c20000", border_width=2, image=CTkImage(dark_image=next_dark,light_image=next_light))
 skip_forward_button.pack(side='left', padx=10, anchor='center')
 
-URL_button = customtkinter.CTkButton(controls_frame, text="URL", command=open_new_window, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent')
+URL_button = customtkinter.CTkButton(controls_frame, text="", command=open_new_window, font=CTkFont(size=15, family='Arial', ), corner_radius=32, fg_color='transparent', border_color="#c20000", border_width=2, image=CTkImage(dark_image=URl_dark,light_image=URl_light))
 URL_button.pack(side='left', padx=10, anchor='center')
 
 # Hauptloop startenw
